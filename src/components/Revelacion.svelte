@@ -9,9 +9,9 @@
   let placements = $derived(gameState.placements);
 
   function getActionImage(type) {
-    if (type === 'loot') return '/jugador/loot4.png';
-    if (type === 'shoot') return '/jugador/shoot4.png';
-    if (type === 'whisky') return '/jugador/whisky.png';
+    if (type === 'loot') return '/jugador/loot4.webp';
+    if (type === 'shoot') return '/jugador/shoot4.webp';
+    if (type === 'whisky') return '/jugador/whisky.webp';
     return '';
   }
 

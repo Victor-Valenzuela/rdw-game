@@ -67,7 +67,7 @@
 
 <style>
   .tutorial-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; z-index: 2000; padding: 1rem; }
-  .tutorial-box { width: 100%; max-width: 500px; background: url('/tutorial.png') center/contain no-repeat; min-height: 620px; padding: 120px 6.5rem 3rem; text-align: center; color: #3d2817; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .tutorial-box { width: 100%; max-width: 500px; background: url('/tutorial.webp') center/contain no-repeat; min-height: 620px; padding: 120px 6.5rem 3rem; text-align: center; color: #3d2817; display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .tutorial-box h2 { font-size: 1.2rem; color: #2a1810; margin-bottom: 0.8rem; text-transform: uppercase; font-weight: 900; letter-spacing: 1px; }
   .tutorial-text { font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.2rem; text-align: justify; color: #2a1810; font-weight: 600; min-height: 180px; -webkit-text-stroke: 0.2px #2a1810; }
   .large-text { font-size: 1rem; text-align: center; display: flex; align-items: center; justify-content: center; }

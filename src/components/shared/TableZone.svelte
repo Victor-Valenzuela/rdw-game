@@ -3,9 +3,9 @@
   let { display, saloonDeckLength, roundNumber, phase, slots, selectedCards, placements, playerKey, isConfirmed = false, selectedActions = null } = $props();
 
   function getActionImg(type) {
-    if (type === 'loot') return '/jugador/loot4.png';
-    if (type === 'shoot') return '/jugador/shoot4.png';
-    return '/jugador/whisky.png';
+    if (type === 'loot') return '/jugador/loot4.webp';
+    if (type === 'shoot') return '/jugador/shoot4.webp';
+    return '/jugador/whisky.webp';
   }
 
   let myKey = $derived(playerKey === 'p1' ? 'p1' : (playerKey === 'p2' ? 'p2' : (playerKey === 0 ? 'p1' : 'p2')));
@@ -16,7 +16,7 @@
   <div class="saloon-row">
     <div class="round-badge">R{roundNumber} F{phase}</div>
     <div class="deck-stack">
-      <div class="deck-card-back"><img src="/mesa/reverso.png" alt="" class="deck-img" /></div>
+      <div class="deck-card-back"><img src="/mesa/reverso.webp" alt="" class="deck-img" /></div>
       <span class="deck-count">{saloonDeckLength}</span>
     </div>
     <div class="display-cards">

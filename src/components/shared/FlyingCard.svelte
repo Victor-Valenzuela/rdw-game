@@ -2,9 +2,9 @@
   let { flyingCard } = $props();
 
   function getActionImg(type) {
-    if (type === 'loot') return '/jugador/loot4.png';
-    if (type === 'shoot') return '/jugador/shoot4.png';
-    return '/jugador/whisky.png';
+    if (type === 'loot') return '/jugador/loot4.webp';
+    if (type === 'shoot') return '/jugador/shoot4.webp';
+    return '/jugador/whisky.webp';
   }
 </script>
 

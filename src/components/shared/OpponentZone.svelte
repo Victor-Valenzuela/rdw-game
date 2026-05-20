@@ -9,7 +9,7 @@
   {/if}
   <div class="opponent-cards">
     {#each Array(cardCount) as _}
-      <div class="card-back"><img src="/mesa/reverso.png" alt="" class="card-back-img" /></div>
+      <div class="card-back"><img src="/mesa/reverso.webp" alt="" class="card-back-img" /></div>
     {/each}
   </div>
   <StatsRow {name} {gold} {bullets} {whiskyCount} {hasBottle} />

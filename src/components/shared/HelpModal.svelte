@@ -4,7 +4,7 @@
 
 {#if show}
   <div class="help-modal" onclick={ondismiss}>
-    <img src="/ayuda2.png" alt="Ayuda" class="help-img" />
+    <img src="/ayuda2.webp" alt="Ayuda" class="help-img" />
   </div>
 {/if}
 

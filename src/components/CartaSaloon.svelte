@@ -2,9 +2,9 @@
   let { card, active = false } = $props();
 
   function getCardImage(card) {
-    if (card.type === 'gold') return `/mesa/${card.value}pepas.png`;
-    if (card.type === 'extra_whisky') return '/mesa/tragowhisky.png';
-    if (card.type === 'extra_shot') return '/mesa/caja.png';
+    if (card.type === 'gold') return `/mesa/${card.value}pepas.webp`;
+    if (card.type === 'extra_whisky') return '/mesa/tragowhisky.webp';
+    if (card.type === 'extra_shot') return '/mesa/caja.webp';
     return null;
   }
 </script>

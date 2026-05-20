@@ -109,7 +109,7 @@
   <HelpModal show={showHelp} ondismiss={() => showHelp = false} />
   {#if flyingCard}
     <div class="flying-card" style="--from-x:{flyingCard.fromRect.left + flyingCard.fromRect.width/2}px;--from-y:{flyingCard.fromRect.top + flyingCard.fromRect.height/2}px;--to-x:{flyingCard.toRect.left + flyingCard.toRect.width/2}px;--to-y:{flyingCard.toRect.top + flyingCard.toRect.height/2}px;">
-      <img src="/jugador/{flyingCard.cardType === 'loot' ? 'loot4' : flyingCard.cardType === 'shoot' ? 'shoot4' : 'whisky'}.png" alt="" class="flying-img" />
+      <img src="/jugador/{flyingCard.cardType === 'loot' ? 'loot4' : flyingCard.cardType === 'shoot' ? 'shoot4' : 'whisky'}.webp" alt="" class="flying-img" />
     </div>
   {/if}
 </div>

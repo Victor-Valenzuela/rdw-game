@@ -7,9 +7,9 @@
     <h1>ROBA, DISPARA, WHISKY</h1>
 
     <div class="icons">
-      <img src="/iconos/oro-puntaje.png" alt="Robar" class="start-icon" />
-      <img src="/iconos/bala-puntaje.png" alt="Disparar" class="start-icon" />
-      <img src="/iconos/vaso-puntaje.png" alt="Whisky" class="start-icon" />
+      <img src="/iconos/oro-puntaje.webp" alt="Robar" class="start-icon" />
+      <img src="/iconos/bala-puntaje.webp" alt="Disparar" class="start-icon" />
+      <img src="/iconos/vaso-puntaje.webp" alt="Whisky" class="start-icon" />
     </div>
 
     <div class="buttons">
@@ -26,7 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/fondo.jpg') center/cover no-repeat;
+    background: url('/fondo.webp') center/cover no-repeat;
     position: relative;
   }
 

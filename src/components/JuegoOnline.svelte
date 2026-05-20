@@ -68,9 +68,9 @@
   }
 
   function getActionImg(type) {
-    if (type === 'loot') return '/jugador/loot4.png';
-    if (type === 'shoot') return '/jugador/shoot4.png';
-    return '/jugador/whisky.png';
+    if (type === 'loot') return '/jugador/loot4.webp';
+    if (type === 'shoot') return '/jugador/shoot4.webp';
+    return '/jugador/whisky.webp';
   }
 
   function handleCardClick(card, event) {
@@ -224,13 +224,13 @@
                   {:else}
                     {@const winAction = winner === 0 ? placement.p1 : placement.p2}
                     {winner === 0 ? roomData.players.p1.name : roomData.players.p2.name} gana con {ACTION_NAMES[winAction]}
-                    {#if winAction === 'shoot'}<span class="reward">(+1 <img src="/iconos/bala-puntaje.png" alt="" class="ri" />)</span>
-                    {:else if winAction === 'whisky'}<span class="reward">(+1 <img src="/iconos/vaso-puntaje.png" alt="" class="ri" />)</span>
+                    {#if winAction === 'shoot'}<span class="reward">(+1 <img src="/iconos/bala-puntaje.webp" alt="" class="ri" />)</span>
+                    {:else if winAction === 'whisky'}<span class="reward">(+1 <img src="/iconos/vaso-puntaje.webp" alt="" class="ri" />)</span>
                     {:else if winAction === 'loot'}
                       {@const sc = game.display[slotIdx]}
-                      {#if sc?.type === 'gold'}<span class="reward">(+{sc.value} <img src="/iconos/oro-puntaje.png" alt="" class="ri" />)</span>
-                      {:else if sc?.type === 'extra_whisky'}<span class="reward">(+1 <img src="/iconos/vaso-puntaje.png" alt="" class="ri" />)</span>
-                      {:else if sc?.type === 'extra_shot'}<span class="reward">(+1 <img src="/iconos/bala-puntaje.png" alt="" class="ri" />)</span>
+                      {#if sc?.type === 'gold'}<span class="reward">(+{sc.value} <img src="/iconos/oro-puntaje.webp" alt="" class="ri" />)</span>
+                      {:else if sc?.type === 'extra_whisky'}<span class="reward">(+1 <img src="/iconos/vaso-puntaje.webp" alt="" class="ri" />)</span>
+                      {:else if sc?.type === 'extra_shot'}<span class="reward">(+1 <img src="/iconos/bala-puntaje.webp" alt="" class="ri" />)</span>
                       {/if}
                     {/if}
                   {/if}

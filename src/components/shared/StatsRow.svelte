@@ -6,9 +6,9 @@
 <div class="stats-container">
   <span class="player-name">{name}</span>
   <div class="stats-row">
-    <span><img src="/iconos/oro-puntaje.png" alt="" class="stat-icon" />{gold}{#if showMax}/{WIN_CONDITIONS.GOLD}{/if}</span>
-    <span><img src="/iconos/bala-puntaje.png" alt="" class="stat-icon" />{bullets}{#if showMax}/{WIN_CONDITIONS.BULLETS}{/if}</span>
-    <span class:has-bottle={hasBottle}><img src="/iconos/vaso-puntaje.png" alt="" class="stat-icon" />{whiskyCount}{#if showMax}/{WIN_CONDITIONS.WHISKY}{/if}</span>
+    <span><img src="/iconos/oro-puntaje.webp" alt="" class="stat-icon" />{gold}{#if showMax}/{WIN_CONDITIONS.GOLD}{/if}</span>
+    <span><img src="/iconos/bala-puntaje.webp" alt="" class="stat-icon" />{bullets}{#if showMax}/{WIN_CONDITIONS.BULLETS}{/if}</span>
+    <span class:has-bottle={hasBottle}><img src="/iconos/vaso-puntaje.webp" alt="" class="stat-icon" />{whiskyCount}{#if showMax}/{WIN_CONDITIONS.WHISKY}{/if}</span>
   </div>
 </div>
 

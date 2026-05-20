@@ -142,7 +142,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/fondo.jpg') center top/cover no-repeat;
+    background: url('/fondo.webp') center top/cover no-repeat;
     padding: 1rem;
     position: relative;
   }
