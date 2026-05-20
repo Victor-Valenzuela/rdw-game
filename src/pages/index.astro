@@ -18,9 +18,15 @@ import '../styles/global.css';
     <link rel="preload" as="image" href="/jugador/loot4.webp">
     <link rel="preload" as="image" href="/jugador/shoot4.webp">
     <link rel="preload" as="image" href="/jugador/whisky.webp">
+    <link rel="manifest" href="/manifest.json" />
     <title>Roba, Dispara, Whisky</title>
   </head>
   <body>
     <App client:load />
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+    </script>
   </body>
 </html>
