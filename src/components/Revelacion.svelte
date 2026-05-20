@@ -7,6 +7,8 @@
 
   let slots = $derived(gameState.selectingSlots);
   let placements = $derived(gameState.placements);
+  let p1Name = $derived(gameState.players?.[0]?.name || 'J1');
+  let p2Name = $derived(gameState.players?.[1]?.name || 'J2');
 
   function getActionImage(type) {
     if (type === 'loot') return '/jugador/loot4.webp';
@@ -44,12 +46,12 @@
               <span class="slot-label">Posición #{slotIdx + 1}</span>
               <div class="versus">
                 <div class="action" class:winner={winner === 0} class:loser={winner === 1}>
-                  <span class="player-label">J1</span>
+                  <span class="player-label">{p1Name}</span>
                   <img src={getActionImage(placement.p1)} alt={ACTION_NAMES[placement.p1]} class="action-img" />
                 </div>
                 <span class="vs">VS</span>
                 <div class="action" class:winner={winner === 1} class:loser={winner === 0}>
-                  <span class="player-label">J2</span>
+                  <span class="player-label">{p2Name}</span>
                   <img src={getActionImage(placement.p2)} alt={ACTION_NAMES[placement.p2]} class="action-img" />
                 </div>
               </div>
@@ -57,7 +59,22 @@
                 {#if winner === 'tie'}
                   ¡Empate!
                 {:else}
-                  J{winner + 1} gana con {ACTION_NAMES[winner === 0 ? placement.p1 : placement.p2]}
+                  {@const winAction = winner === 0 ? placement.p1 : placement.p2}
+                  {winner === 0 ? p1Name : p2Name} gana con {ACTION_NAMES[winAction]}
+                  {#if winAction === 'shoot'}
+                    <span class="reward">(+1 <img src="/iconos/bala-puntaje.webp" alt="" class="reward-icon" />)</span>
+                  {:else if winAction === 'whisky'}
+                    <span class="reward">(+1 <img src="/iconos/vaso-puntaje.webp" alt="" class="reward-icon" />)</span>
+                  {:else if winAction === 'loot'}
+                    {@const saloonCard = gameState.display[slotIdx]}
+                    {#if saloonCard?.type === 'gold'}
+                      <span class="reward">(+{saloonCard.value} <img src="/iconos/oro-puntaje.webp" alt="" class="reward-icon" />)</span>
+                    {:else if saloonCard?.type === 'extra_whisky'}
+                      <span class="reward">(+1 <img src="/iconos/vaso-puntaje.webp" alt="" class="reward-icon" />)</span>
+                    {:else if saloonCard?.type === 'extra_shot'}
+                      <span class="reward">(+1 <img src="/iconos/bala-puntaje.webp" alt="" class="reward-icon" />)</span>
+                    {/if}
+                  {/if}
                 {/if}
               </span>
             </div>
@@ -182,6 +199,19 @@
     font-size: 0.8rem;
     color: #daa520;
     font-weight: bold;
+  }
+
+  .reward {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .reward-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    vertical-align: middle;
   }
 
   .vs {

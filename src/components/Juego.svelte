@@ -106,7 +106,11 @@
     </div>
   {/if}
 
-  <HelpModal show={showHelp} ondismiss={() => showHelp = false} />
+  {#if showHelp}
+    <div class="help-modal" onclick={() => showHelp = false}>
+      <img src="/ayuda2.webp" alt="Ayuda" class="help-img" />
+    </div>
+  {/if}
   {#if flyingCard}
     <div class="flying-card" style="--from-x:{flyingCard.fromRect.left + flyingCard.fromRect.width/2}px;--from-y:{flyingCard.fromRect.top + flyingCard.fromRect.height/2}px;--to-x:{flyingCard.toRect.left + flyingCard.toRect.width/2}px;--to-y:{flyingCard.toRect.top + flyingCard.toRect.height/2}px;">
       <img src="/jugador/{flyingCard.cardType === 'loot' ? 'loot4' : flyingCard.cardType === 'shoot' ? 'shoot4' : 'whisky'}.webp" alt="" class="flying-img" />
@@ -115,7 +119,7 @@
 </div>
 
 <style>
-  .game-screen { width: 100%; height: 100dvh; display: flex; flex-direction: column; background: linear-gradient(135deg, #3d2817 0%, #2a1810 100%); position: relative; }
+  .game-screen { width: 100%; height: 100dvh; display: flex; flex-direction: column; background: linear-gradient(135deg, #3d2817 0%, #2a1810 100%); position: relative; overflow: hidden; }
   .game-screen > :global(*) { position: relative; z-index: 1; }
   .player-zone { padding: 0.8rem 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
   .game-over { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #f5deb3; gap: 0.5rem; }
@@ -124,6 +128,8 @@
   .sub-text { font-size: 1.2rem; margin-bottom: 2rem; color: #f5deb3; }
   .btn-action { padding: 0.6rem 2rem; background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%); color: #f5deb3; border: 2px solid #daa520; border-radius: 8px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; }
   .btn-action:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.5); }
+  .help-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; z-index: 9999; cursor: pointer; }
+  .help-img { max-width: 300px; max-height: 80vh; object-fit: contain; }
   .flying-card { position: fixed; z-index: 9999; width: 50px; height: 45px; border-radius: 8px; overflow: hidden; pointer-events: none; animation: flyToSlot 0.35s ease-out forwards; left: 0; top: 0; }
   .flying-img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
   @keyframes flyToSlot { 0% { transform: translate(calc(var(--from-x) - 25px), calc(var(--from-y) - 22px)) scale(1.2); opacity: 1; } 100% { transform: translate(calc(var(--to-x) - 25px), calc(var(--to-y) - 22px)) scale(1); opacity: 1; } }
