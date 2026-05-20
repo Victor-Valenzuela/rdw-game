@@ -3,6 +3,10 @@
 </script>
 
 <div class="container">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="/fondo-animado.mp4" type="video/mp4" />
+  </video>
+
   <!-- Partículas de polvo -->
   <div class="dust-layer">
     <div class="dust d1"></div>
@@ -19,8 +23,10 @@
 
   <div class="content">
     <div class="title-row">
-      <span class="word w1">ROBA,</span>
-      <span class="word w2">DISPARA,</span>
+      <span class="word w1">ROBA</span>
+      <span class="separator w1">-</span>
+      <span class="word w2">DISPARA</span>
+      <span class="separator w2">-</span>
       <span class="word w3">WHISKY</span>
     </div>
 
@@ -44,9 +50,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/fondo.webp') center/cover no-repeat;
+    background: #2a1810;
     position: relative;
     overflow: hidden;
+  }
+
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
   .container::before {
@@ -74,16 +89,16 @@
     filter: blur(1px);
   }
 
-  .d1 { top: 15%; animation: drift 10s linear infinite; width: 250px; }
-  .d2 { top: 25%; animation: drift 16s linear infinite; animation-delay: -3s; width: 350px; }
-  .d3 { top: 40%; animation: drift 13s linear infinite; animation-delay: -7s; width: 180px; }
-  .d4 { top: 55%; animation: drift 18s linear infinite; animation-delay: -1s; width: 300px; }
-  .d5 { top: 65%; animation: drift 11s linear infinite; animation-delay: -9s; width: 220px; }
-  .d6 { top: 30%; animation: drift 14s linear infinite; animation-delay: -5s; width: 280px; }
-  .d7 { top: 70%; animation: drift 17s linear infinite; animation-delay: -12s; width: 200px; }
-  .d8 { top: 80%; animation: drift 12s linear infinite; animation-delay: -6s; width: 320px; }
-  .d9 { top: 45%; animation: drift 19s linear infinite; animation-delay: -14s; width: 160px; }
-  .d10 { top: 85%; animation: drift 15s linear infinite; animation-delay: -8s; width: 270px; }
+  .d1 { top: 62%; animation: drift 10s linear infinite; width: 250px; }
+  .d2 { top: 68%; animation: drift 16s linear infinite; animation-delay: -3s; width: 350px; }
+  .d3 { top: 74%; animation: drift 13s linear infinite; animation-delay: -7s; width: 180px; }
+  .d4 { top: 80%; animation: drift 18s linear infinite; animation-delay: -1s; width: 300px; }
+  .d5 { top: 85%; animation: drift 11s linear infinite; animation-delay: -9s; width: 220px; }
+  .d6 { top: 65%; animation: drift 14s linear infinite; animation-delay: -5s; width: 280px; }
+  .d7 { top: 90%; animation: drift 17s linear infinite; animation-delay: -12s; width: 200px; }
+  .d8 { top: 95%; animation: drift 12s linear infinite; animation-delay: -6s; width: 320px; }
+  .d9 { top: 72%; animation: drift 19s linear infinite; animation-delay: -14s; width: 160px; }
+  .d10 { top: 88%; animation: drift 15s linear infinite; animation-delay: -8s; width: 270px; }
 
   @keyframes drift {
     0% { left: -300px; opacity: 0; }
@@ -92,24 +107,28 @@
     100% { left: 110%; opacity: 0; }
   }
 
+
+
   /* Contenido */
   .content {
     text-align: center;
     color: #f5deb3;
     position: relative;
     z-index: 3;
+    margin-top: -10vh;
   }
 
   /* Título con efecto western metálico */
   .title-row {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
   }
 
   .word {
+    font-family: 'Rye', cursive;
     font-size: clamp(2.2rem, 6vw, 4.5rem);
     font-weight: 900;
     letter-spacing: 3px;
@@ -126,6 +145,21 @@
   .w1 { animation-delay: 0.3s, 3s; }
   .w2 { animation-delay: 0.7s, 3.4s; }
   .w3 { animation-delay: 1.1s, 3.8s; }
+
+  .separator {
+    font-family: 'Rye', cursive;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    background: linear-gradient(180deg, #f4e4a0 0%, #daa520 30%, #8b6914 60%, #daa520 80%, #f4e4a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(2px 3px 0px #000) drop-shadow(4px 5px 0px rgba(0,0,0,0.4));
+    opacity: 0;
+    animation: revealWord 0.6s ease-out forwards;
+  }
+
+  .separator.w1 { animation-delay: 0.5s; }
+  .separator.w2 { animation-delay: 0.9s; }
 
   @keyframes revealWord {
     0% { opacity: 0; transform: translateX(-20px); }

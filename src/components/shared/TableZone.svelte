@@ -82,4 +82,10 @@
     .played-card { width: 55px; height: 50px; }
     .action-slot { width: 60px; height: 55px; }
   }
+
+  @media (min-width: 1440px) {
+    .deck-card-back { width: 150px; height: 210px; }
+    .played-card { width: 65px; height: 58px; }
+    .action-slot { width: 70px; height: 62px; }
+  }
 </style>

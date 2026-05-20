@@ -32,4 +32,8 @@
   .hand-card:disabled { opacity: 0.6; cursor: default; }
   .card-img { width: 100%; height: 100%; object-fit: fill; border-radius: 8px; }
   .card-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.6); border-radius: 6px; font-size: 1.4rem; color: #ff6b6b; font-weight: bold; }
+
+  @media (min-width: 1440px) {
+    .hand-card { width: 140px; height: 195px; }
+  }
 </style>

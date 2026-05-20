@@ -12,6 +12,9 @@
 </script>
 
 <div class="setup-wrapper">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="/fondo-animado.mp4" type="video/mp4" />
+  </video>
   <div class="setup">
     <h2>MODO LOCAL</h2>
 
@@ -37,7 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/fondo.webp') center/cover no-repeat;
+    background: #2a1810; overflow: hidden;
     padding: 1rem;
     position: relative;
   }
@@ -46,7 +49,16 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(20, 10, 5, 0.4);
+    background: rgba(20, 10, 5, 0.4); z-index: 1;
+  }
+
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
   .setup {

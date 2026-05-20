@@ -83,7 +83,7 @@
       {:else}
         <p class="win-text">EMPATE</p>
       {/if}
-      <button onclick={onreset} class="btn-action">NUEVO DUELO</button>
+      <button onclick={onreset} class="btn-action">SALIR</button>
     </div>
 
   {:else if showTransition}

@@ -91,4 +91,11 @@
       height: 170px;
     }
   }
+
+  @media (min-width: 1440px) {
+    .carta {
+      width: 150px;
+      height: 210px;
+    }
+  }
 </style>

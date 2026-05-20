@@ -125,10 +125,12 @@
   <Juego {gameState} onreset={resetGame} onupdate={updateLocalGame} />
 {:else if screen === 'lobby'}
   <div class="lobby-wrapper">
+    <video class="bg-video" autoplay muted loop playsinline><source src="/fondo-animado.mp4" type="video/mp4" /></video>
     <Lobby onjoin={handleJoinRoom} onback={() => screen = 'inicio'} />
   </div>
 {:else if screen === 'waiting'}
   <div class="lobby-wrapper">
+    <video class="bg-video" autoplay muted loop playsinline><source src="/fondo-animado.mp4" type="video/mp4" /></video>
     <EsperaSala code={roomCode} roomData={roomData} {playerKey} onleave={handleLeaveRoom} />
   </div>
 {:else if screen === 'online'}
@@ -142,9 +144,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/fondo.webp') center/cover no-repeat;
+    background: #2a1810;
     padding: 1rem;
     position: relative;
+    overflow: hidden;
+  }
+
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
   .lobby-wrapper::before {
@@ -152,10 +164,20 @@
     position: absolute;
     inset: 0;
     background: rgba(20, 10, 5, 0.4);
+    z-index: 1;
   }
 
   .lobby-wrapper > :global(*) {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+  }
+
+  .bg-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0 !important;
   }
 </style>
